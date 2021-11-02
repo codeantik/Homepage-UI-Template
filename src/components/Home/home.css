@@ -110,13 +110,13 @@ li {
 }
 
 .home-content .left {
-    /* background: yellow; */
+    background:rgba(2, 7, 33, 1) !important;
     flex: 0.5;
     /* height: 100%; */
 }
 
 .home-content .right {
-    /* background: red; */
+    background: rgba(2, 7, 33, 1) !important;
     flex: 0.5;
 }
 
@@ -327,7 +327,6 @@ li {
     align-items: center;
     width: 80%;
     margin: 0 auto;
-    /* flex-direction: column; */
     /* background: greenyellow; */
     color: white;
     padding: 0 20px;
@@ -338,6 +337,7 @@ li {
     padding: 20px 0;
     text-transform: uppercase;
     font-weight: 500;
+    color: white !important;
 }
 
 .home-content .right .bottom p {

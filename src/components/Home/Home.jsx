@@ -1,4 +1,6 @@
 import './home.css'
+import { useEffect } from 'react';
+import { useHistory } from 'react-router';
 import logo from '../../images/logo.png';
 import phone from '../../images/phone.svg'
 import blue from '../../images/blue.png';
@@ -9,6 +11,20 @@ import ellipse2 from '../../images/ellipse2.png';
 import { Link } from 'react-router-dom'
 
 export default function Home() {
+
+    const history = useHistory();
+
+    useEffect(() => {
+        if(!sessionStorage.getItem('accessToken')){
+           history.push('/login');
+        }
+   
+     }, [history])
+
+     const handleRedirect = () => {
+         history.push('/login');
+     }
+
     return (
         <div className="home-container">
             <div className="home-navbar">
@@ -23,7 +39,7 @@ export default function Home() {
                     <li><Link to="/">Company</Link></li>
                     <li><Link to="/">Resources</Link></li>
                     <li><Link to="/">Login</Link></li>
-                    <button>Sign Up</button>
+                    <button onClick={handleRedirect}>Log Out</button>
                     <img src={phone} alt="phone" />
                 </nav>       
             </div>
